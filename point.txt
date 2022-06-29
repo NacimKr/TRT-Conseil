@@ -1,0 +1,30 @@
+LUNDI 27/06/2022
+
+- Implémentation du template sur Figma
+- Installation de Bootstrap
+- Création des fichiers MVC et du .htacces pour le routage
+- Mis en place des différentes pages
+- Création de la base de données mySQL pour les offres d'emplois
+- Et connexion et recupération de ces données sur la page "Candidats"
+
+-----------------------------------------------------------------------------------
+
+MARDI 28/06/2022
+
+- Gestion de l'affichage du compte utilisateur sur le formulaire de connexion
+- Apprentissage et utilisation plus poussé du MVC
+- Creation d'une base de données trt-conseil avec pour le moment deux table 'emplois' et 'utilisateurs'
+- Et création de plusieurs autres controller et models pour la gestion des utilisateurs
+- Correction apporter au front en me basant sur la maqiette de figma
+
+------------------------------------------------------------------------------------
+
+MERCREDI 29/06/2022
+
+- Utilisateur peut se connecter a son profil
+- Création de la page profil des utilisateurs
+- Possibilité de vider une session en cas de debug du site
+- Possibilité de se déconnecter
+
+A faire
+Gerer les menus sur la page profil
