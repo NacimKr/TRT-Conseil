@@ -14,11 +14,11 @@
             <div class="card-body">
                 <h5 class="card-title">Description : </h5>
                 <p class="card-text"><?= $emploi['Description'] ?></p>
-                <a href="#" class="btn btn-primary">
-                Salaire : <?= $emploi['Salaire'] ?>€</a>
+                <p>Salaire : <?= $emploi['Salaire'] ?>€</p>
+                <button class="btn btn-primary">Postuler</button>
             </div>
             <div class="card-footer text-muted">
-                Durée : <?= $emploi['Durée'] ?>
+                <p>Durée : <?= $emploi['Durée'] ?></p>
             </div>
         </div>
 <?php endforeach; ?>
