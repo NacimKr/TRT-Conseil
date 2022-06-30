@@ -163,13 +163,15 @@ class MainController{
         $page_content = ob_get_clean();
         require_once "./views/common/template.php";
     }
-
+    
     public function offres_emploi(){
-        $emploi_datas = $this->mainModel->getAllDataFromDB();
         ob_start();
+        $emplois = $this->mainModel->getAllDataFromDB();
         require_once "./views/admin/offre-emploi.php";
         $page_content = ob_get_clean();
+        $this->publierAnnonce($emplois);
         require_once "./views/common/template.php";
+        //$this->publierAnnonce($emploi_datas);
     }
 
     public function candidat(){
@@ -178,5 +180,27 @@ class MainController{
         require_once "./views/admin/candidat-admin.php";
         $page_content = ob_get_clean();
         require_once "./views/common/template.php";
+    }
+
+    public function create_emploi(){
+        ob_start();
+        require_once "./views/admin/form-create-emploi-admin.php";
+        $emploi_datas = $this->mainModel->getAllDataFromDB();
+        $page_content = ob_get_clean();
+        require_once "./views/common/template.php";
+        if(isset($_POST['poste']) && isset($_POST['duration']) && isset($_POST['description'])){
+            $annoncePublier = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary']);
+            header('Location:http://localhost/TRT_CONSEIL/offres_emploi');
+            if($annoncePublier){
+                $_SESSION['alert'] = [
+                    "class" => "alert-primary",
+                    "message" => "Votre annone à bien été publié"
+                ];
+            }
+        }
+    }
+
+    public function publierAnnonce($emploi){
+        return $emploi;
     }
 }

@@ -56,6 +56,10 @@ switch($_GET['page']){
         case 'candidat':
             $mainController->candidat();
         break;
+
+        case 'create_emploi':
+            $mainController->create_emploi();
+        break;
         
         default: throw new Exception("La page existe pas !");
         break;

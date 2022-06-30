@@ -6,12 +6,26 @@
     <div class="card-body fw-bold text-center fs-2 text-uppercase shadow">La liste des offres d'emploi</div>
 </div>
 
-<div class="card mb-3 d-inline-block mx-4 mt-5 p-4" style="width:450px">
-    <h3><?= $emploi_datas['Poste'] ?></h3>
-    <p class="fs-5"><?= $emploi_datas['Description'] ?></p>
-    <p class="fs-5 fw-bold"><?= $emploi_datas['Salaire'] ?>€</p>
-</div>
+<?php foreach($emplois as $emploi) : ?>
+        <div class="card text-center d-inline-block mt-5 mx-3 shadow" style="width:350px">
+            <div class="card-header">
+                <p><strong>Intitulé du poste </strong><br/><?= $emploi['POSTE'] ?></p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Description : </h5>
+                <p class="card-text"><?= $emploi['Description'] ?></p>
+                <a href="#" class="btn btn-primary">
+                Salaire : <?= $emploi['Salaire'] ?>€</a>
+            </div>
+            <div class="card-footer text-muted">
+                Durée : <?= $emploi['Durée'] ?>
+            </div>
+        </div>
+<?php endforeach; ?>
 
-<form action="create-emploi">
-    <button class="btn btn-danger d-block mx-auto m-5">Publier une nouvelle offre</button>
+
+
+<form action="create_emploi">
+    <button type="submit" class="btn btn-danger d-block mx-auto m-5">Publier une nouvelle offre</button>
 </form>
+
