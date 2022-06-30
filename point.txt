@@ -34,7 +34,7 @@ JEUDI 30/06/2022
 
 - Création et gestion administrateur
 - Possibilité de création un utilisateur
-- Possibilité de publier des offres mais on les voit pas >:(
+- Possibilité de publier des offres et de les voir apparaître dans la liste des offres d'emploi
 - Création d'un compte administration
 - Boutton création d'un consultant
 - Personnalisation des menus en fonction des roles

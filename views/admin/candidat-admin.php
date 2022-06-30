@@ -6,7 +6,9 @@
     <div class="card-body fw-bold text-center fs-2 text-uppercase shadow">Les Candidats Inscrits</div>
 </div>
 
-<div class="card mb-3 d-inline-block mx-4 mt-5 p-4" style="width:450px">
-    <h4><?= ucfirst($candidats_datas["login"]) ?></h4>
-    <h4><?= ucfirst($candidats_datas["role"]) ?></h4>
-</div>
+<?php foreach($candidats_datas as $candidat) : ?>
+    <div class="card mb-3 d-inline-block mx-4 mt-5 p-4" style="width:450px">
+        <p><?= $candidat['login'] ?></p>    
+        <p><?= $candidat['email'] == "" ? "<b>pas renseigné</b>" : $candidat['email'] ?></p>
+    </div>
+<?php endforeach; ?>

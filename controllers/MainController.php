@@ -173,15 +173,16 @@ class MainController{
         require_once "./views/common/template.php";
         //$this->publierAnnonce($emploi_datas);
     }
-
+///*////////
     public function candidat(){
         $candidats_datas = $this->getUtilisateur->getAllCandidats();
         ob_start();
         require_once "./views/admin/candidat-admin.php";
         $page_content = ob_get_clean();
+        //$candidats = $this->getUtilisateur->getAllCandidats();
         require_once "./views/common/template.php";
     }
-
+////////////
     public function create_emploi(){
         ob_start();
         require_once "./views/admin/form-create-emploi-admin.php";
@@ -202,5 +203,9 @@ class MainController{
 
     public function publierAnnonce($emploi){
         return $emploi;
+    }
+
+    public function publierLesCandidats($candidats){
+        return $candidats;
     }
 }

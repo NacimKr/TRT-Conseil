@@ -48,7 +48,7 @@ class GetUtilisateur extends MainModel{
         $stmt->bindValue(':role', $role, PDO::PARAM_STR);
         $stmt->bindValue(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
-        $newUsers = $stmt->rowCount() > 0;
+        $newUsers = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
         return $newUsers;
     }
@@ -57,7 +57,8 @@ class GetUtilisateur extends MainModel{
         $requete = "SELECT * from utilisateur WHERE role != 'Administrateur' ";
         $connexion = $this->getBDD()->prepare($requete);
         $connexion->execute();
-        $resultat = $connexion->fetch(PDO::FETCH_ASSOC);
+        $resultat = $connexion->fetchAll();
+        //$resultat = $connexion->rowCount() > 0;
         $connexion->closeCursor();
         return $resultat;
     }
