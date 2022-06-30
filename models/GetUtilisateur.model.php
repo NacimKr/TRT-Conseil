@@ -14,6 +14,15 @@ class GetUtilisateur extends MainModel{
         return $resultat;
     }
 
+    public function getAdminACCOUNT(){
+        $req = "SELECT login, mot_de_passe FROM utilisateur WHERE login = 'AdminTRT01+'";
+        $getAdmin = $this->getBDD()->prepare($req);
+        $getAdmin->execute();
+        $resultatAdmin = $getAdmin->fetch(PDO::FETCH_ASSOC);
+        $getAdmin->closeCursor();
+        return $resultatAdmin;
+    }
+
     public function isValid($name, $password){
         //On recupère le mot de passe crypté
         $passwordBD = $this->getPasswordUser($name);
@@ -28,6 +37,28 @@ class GetUtilisateur extends MainModel{
         $resultat = $connexion->fetch(PDO::FETCH_ASSOC);
         $connexion->closeCursor();
         return $resultat;
+    }
 
+    public function createUser($login, $password, $email, $role, $est_valide){
+        $req = "INSERT INTO utilisateur (login, mot_de_passe, role, email, est_valide) VALUES
+            (:login, :password, :role, :email, 0);";
+        $stmt = $this->getBDD()->prepare($req);
+        $stmt->bindValue(':login', $login, PDO::PARAM_STR);
+        $stmt->bindValue(':password', $password, PDO::PARAM_STR);
+        $stmt->bindValue(':role', $role, PDO::PARAM_STR);
+        $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+        $stmt->execute();
+        $newUsers = $stmt->rowCount() > 0;
+        $stmt->closeCursor();
+        return $newUsers;
+    }
+
+    public function getAllCandidats(){
+        $requete = "SELECT * from utilisateur WHERE role != 'Administrateur' ";
+        $connexion = $this->getBDD()->prepare($requete);
+        $connexion->execute();
+        $resultat = $connexion->fetch(PDO::FETCH_ASSOC);
+        $connexion->closeCursor();
+        return $resultat;
     }
 }

@@ -45,6 +45,17 @@ switch($_GET['page']){
             $mainController->create_account();
         break;
 
+        case 'validation_account':
+            $mainController->validation_account();
+        break;
+
+        case 'offres_emploi':
+            $mainController->offres_emploi();
+        break;
+
+        case 'candidat':
+            $mainController->candidat();
+        break;
         
         default: throw new Exception("La page existe pas !");
         break;

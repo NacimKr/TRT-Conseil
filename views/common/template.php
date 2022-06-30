@@ -9,7 +9,14 @@
 </head>
 <body>
     
-    <?php require_once "menu.php" ?>
+
+    <?php 
+        if(isset($_SESSION['admin']['login'])){
+            require_once "./views/admin/menu-admin.php"; 
+        }else{
+            require_once "menu.php"; 
+        }
+    ?>
         
     <?= $page_content ?>
 
@@ -18,7 +25,10 @@
             <?= $_SESSION['alert']['message'] ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    <?php endif; ?>
+    <?php 
+        unset($_SESSION['alert']);
+        endif; 
+    ?>
 
 
     <!--Fonction optionnel a retirer -->
