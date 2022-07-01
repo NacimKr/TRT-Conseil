@@ -3,7 +3,7 @@
 </div>
 
 <div class="card mx-auto" style="width: 650px; margin-top:-50px;">
-    <div class="card-body fw-bold text-center fs-2 text-uppercase shadow">Candidats</div>
+    <div class="card-body fw-bold text-center fs-2 text-uppercase shadow">Offres d'emploi</div>
 </div>
 
     <?php foreach($emploi_datas as $emploi) : ?>

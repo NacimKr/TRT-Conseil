@@ -7,7 +7,7 @@
 </div>
 
 
-<form class="container mt-5" style="width:700px;">
+<form action="https://formspree.io/f/xgedbgeg" class="container mt-5"  style="width:700px;" method="POST">
     <div class="mb-3">
         <label for="name" class="form-label">Votre nom</label>
         <input type="text" class="form-control" id="name" style="background:#dcdcdc">
@@ -15,7 +15,7 @@
 
     <div class="mb-3">
         <label for="email" class="form-label">Votre email</label>
-        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" style="background:#dcdcdc">
+        <input type="email" class="form-control" id="email" name="email" style="background:#dcdcdc">
     </div>
 
     <label for="floatingTextarea">Votre message</label>

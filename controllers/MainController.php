@@ -1,15 +1,18 @@
 <?php
 require_once "./models/ModelManager.model.php";
 require_once "./models/GetUtilisateur.model.php";
+require_once "./models/GetConsultant.model.php";
 
 class MainController{
 
     private $mainModel;
     private $getUtilisateur;
+    private $getConsultant;
 
     public function __construct(){
         $this->mainModel = new ModelManager();
         $this->getUtilisateur = new GetUtilisateur();
+        $this->getConsultant = new GetConsultant();
     }
 
     function home(){
@@ -207,5 +210,24 @@ class MainController{
 
     public function publierLesCandidats($candidats){
         return $candidats;
+    }
+
+    public function create_consultant(){
+        ob_start();
+        require_once "./views/admin/consultant-admin.php";
+        $page_content = ob_get_clean();
+        require_once "./views/common/template.php";
+
+        if(isset($_POST['prenom_consultant']) && isset($_POST['nom_consultant']) && isset($_POST['login_consultant']) && isset($_POST['password_consultant'])){
+            $this->getConsultant->createConsultant($_POST['nom_consultant'],$_POST['prenom_consultant'],$_POST['login_consultant'],$_POST['password_consultant']);
+        }
+    }
+    
+    public function consultant(){
+        $consultants_datas = $this->getConsultant->getAllConsultant();
+        ob_start();
+        require_once "./views/admin/list-consultant-admin.php";
+        $page_content = ob_get_clean();
+        require_once "./views/common/template.php";
     }
 }
