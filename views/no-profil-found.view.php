@@ -3,10 +3,13 @@
 </div>
 
 <div class="card mx-auto mb-5" style="width: 650px; margin-top:-50px;">
-    <div class="card-body fw-bold text-center fs-2 shadow">VOTRE COMPTE A BIEN ÉTÉ CRÉÉ</div>
+    <div class="card-body fw-bold text-center fs-2 shadow">VOUS NE POUVEZ PAS VOUS CONNECTER<br/><br/>
+    VEUILLEZ D'ABORD VOUS INSCRIRE
+</div>
 </div>
 
 
+
 <button type="submit" class="d-block mx-auto m-5 btn btn-secondary">
-    <a href="login" class="text-decoration-none text-light">Connectez-vous dès maintenant</a>
+    <a href="create_account" class="text-decoration-none text-light">Inscrivez vous</a>
 </button>

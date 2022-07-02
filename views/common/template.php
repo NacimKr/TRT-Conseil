@@ -11,7 +11,7 @@
     
 
     <?php 
-        if(isset($_SESSION['admin']['login'])){
+        if(isset($_SESSION['admin'])){
             require_once "./views/admin/menu-admin.php"; 
         }else{
             require_once "menu.php"; 

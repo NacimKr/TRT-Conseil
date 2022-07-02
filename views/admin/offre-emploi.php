@@ -18,7 +18,8 @@
                 Salaire : <?= $emploi['Salaire'] ?>€</a>
             </div>
             <div class="card-footer text-muted">
-                Durée : <?= $emploi['Durée'] ?>
+                <div>Durée : <?= $emploi['Durée'] ?></div>
+                <div>Horaires : <?= $emploi['heure_debut'] ?> à <?= $emploi['heure_fin'] ?></div>
             </div>
         </div>
 <?php endforeach; ?>

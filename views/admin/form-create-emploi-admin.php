@@ -18,6 +18,13 @@
     </div>
 
     <div class="mb-3">
+        <label for="debut" class="form-label">Horaires Début</label>
+        <input type="time" class="form-control mb-2" name="debut" id="debut" aria-describedby="emailHelp" style="background:#dcdcdc">
+        <label for="fin" class="form-label ">Horaires Fin</label>
+        <input type="time" class="form-control" name="fin" id="fin" aria-describedby="emailHelp" style="background:#dcdcdc">
+    </div>
+
+    <div class="mb-3">
         <label for="salary" class="form-label">Salaire</label>
         <input type="text" class="form-control" name="salary" id="salary" aria-describedby="emailHelp" style="background:#dcdcdc" placeholder="€">
     </div>

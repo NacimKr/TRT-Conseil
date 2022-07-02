@@ -37,4 +37,15 @@ JEUDI 30/06/2022
 - Possibilité de publier des offres et de les voir apparaître dans la liste des offres d'emploi
 - Création d'un compte administration
 - Boutton création d'un consultant
-- Personnalisation des menus en fonction des roles
+
+------------------------------------------------------------------------------
+
+VENDREDI 01/07/2022
+
+- Correction pour la gestion inscription puis connexion
+- Personnalisation du menu en fonction de si on est connecter ou pas
+- Affichage d'un message de bienvenue sur le profil de l'utilisateur
+- Ajout d'un input type file pour les CV
+
+- A faire
+CREER UN DOSSIER POUR RECUPERER LE CV de utilisateur

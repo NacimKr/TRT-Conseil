@@ -28,7 +28,12 @@
 
     <button type="submit" class="btn btn-secondary d-block mx-auto mb-4">Se connecter</button>
 </form>
+
     <div class="d-flex justify-content-center mb-4">
         <a href="create_account" class="text-decoration-none text-dark fw-bold fs-5">Créez votre compte en cliquant ici</a>
+    </div>
+
+    <div class="d-flex justify-content-center mb-4">
+        <a href="admin" class="text-decoration-none text-light fw-bold fs-5 btn btn btn-danger">Accès au compte administrateur</a>
     </div>
 </div>

@@ -17,6 +17,18 @@
   </div>
 
   <label for="floatingTextarea">Description</label>
-    <textarea class="form-control mb-3" style="height: 300px; resize:none;" disabled></textarea>
+  <textarea class="form-control mb-3" style="height: 300px; resize:none;" disabled></textarea>
+  
+  <div>
+    <a href="<?= $_POST['cv'] ?>" class="text-decoration-none text-light btn btn-primary my-4">Votre CV</a>
+  </div>
+
   <button type="submit" class="btn btn-primary" disabled>Submit</button>
 </form>
+
+<pre>
+  
+  <?= $initial = substr($_SERVER['SCRIPT_NAME'], 0, -9) ?>
+  <?= $second = str_replace($initial, "", $initial."file_cv") ?>
+  <!--<?= $initial ?>-->
+</pre>

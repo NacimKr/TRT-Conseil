@@ -68,6 +68,14 @@ switch($_GET['page']){
         case 'consultant':
             $mainController->consultant();
         break;
+
+        case 'admin':
+            $mainController->admin();
+        break;
+
+        case 'profil_admin':
+            $mainController->profil_admin();
+        break;
         
         default: throw new Exception("La page existe pas !");
         break;

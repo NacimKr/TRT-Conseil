@@ -23,6 +23,11 @@
     </div>
 
     <div class="mb-3">
+        <label for="cv" class="form-label fw-bold">Votre CV</label>
+        <input type="file" class="form-control" id="cv" name="cv" style="background:#dcdcdc" required>
+    </div>
+
+    <div class="mb-3">
         <label for="role" class="form-label fw-bold">Vous êtes</label>
         <select class="form-select" name="role" id="role" style="background:#dcdcdc">
             <option selected>...</option>
