@@ -6,8 +6,25 @@ class ModelManager extends MainModel{
     public function getAllDataFromDB(){
         $req = $this->getBDD()->prepare("SELECT * FROM `emplois`");
         $req->execute();
-        $emploi_datas = $req->fetchAll();
+        $emploi_datas = $req->fetchAll(PDO::FETCH_ASSOC);
         return $emploi_datas;
+    }
+
+    public function getMyEmploi($emploi){
+        $req = "SELECT POSTE FROM `emplois` WHERE POSTE = :emploi";
+        $stmt = $this->getBDD()->prepare($req);
+        $stmt->bindValue(':emploi', $emploi, PDO::PARAM_STR);
+        $stmt->execute();
+        $emploi_datas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $emploi_datas;
+    }
+
+    public function emploiIsPostuler(){
+        $req = "UPDATE `emplois` SET emploi_postuler = 'true';";
+        $stmt = $this->getBDD()->prepare($req);
+        $stmt->execute();
+        $a_postuler = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $a_postuler;
     }
 
     public function createNewOffresEmploi($poste, $duree, $description, $salaire, $debut, $fin){
@@ -26,4 +43,14 @@ class ModelManager extends MainModel{
         $stmt->closeCursor();
         return $emploi_datas;
     }
+
+
+    public function getEmploiPostule(){
+        $req = "SELECT * FROM `emplois` WHERE emploi_postuler = 'true';";
+        $stmt = $this->getBDD()->prepare($req);
+        $stmt->execute();
+        $a_postuler = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $a_postuler;
+    }
+
 }

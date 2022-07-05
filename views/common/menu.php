@@ -18,13 +18,13 @@
         </li>
         <?php else :?>
           <li class="nav-item">
-          <a class="nav-link text-light" href="compte">Votre Profil</a>
+          <a class="nav-link text-light" href="http://localhost/TRT_CONSEIL/">Votre Profil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="vos_offres">Vos offres</a>
+          <a class="nav-link text-light" href="http://localhost/TRT_CONSEIL/vos_offres">Offres Emploi</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="contact">Contact</a>
+          <a class="nav-link text-light" href="http://localhost/TRT_CONSEIL/vous_avez_postule">Vous avez postulé ?</a>
         </li>
           <?php endif; ?>
       </ul>

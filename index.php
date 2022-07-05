@@ -7,8 +7,10 @@ if(empty($_GET['page'])){
     $_GET['page'] = "home";
 }
 
+$params = explode('/', $_GET['page']);
+
 try{
-switch($_GET['page']){
+switch($params[0]){
         case 'home':
             $mainController->home();
         break;
@@ -19,6 +21,14 @@ switch($_GET['page']){
     
         case 'candidats':
             $mainController->candidats();
+        break;
+
+        case 'vos_offres':
+            $mainController->vos_offres();
+        break;
+
+        case 'postuler':
+            $mainController->postuler();
         break;
     
         case 'contact':
@@ -75,6 +85,10 @@ switch($_GET['page']){
 
         case 'profil_admin':
             $mainController->profil_admin();
+        break;
+
+        case 'vous_avez_postule':
+            $mainController->vous_avez_postule();
         break;
         
         default: throw new Exception("La page existe pas !");

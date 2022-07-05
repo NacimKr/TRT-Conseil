@@ -42,8 +42,15 @@
     
     if(isset($_POST['vider'])){
         unset($_SESSION['connecté']);
+        unset($_SESSION['postuler']);
+        unset($_SESSION['admin']);
+        header('Location:http://localhost/TRT_CONSEIL/home');
     }
 
+
+    echo "<pre>";
+    var_dump($_SERVER);
+    echo "</pre>";
 
     ?>
 

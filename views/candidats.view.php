@@ -15,7 +15,7 @@
                 <h5 class="card-title">Description : </h5>
                 <p class="card-text"><?= $emploi['Description'] ?></p>
                 <p>Salaire : <?= $emploi['Salaire'] ?>€</p>
-                <button class="btn btn-primary">Postuler</button>
+                <button class="btn btn-primary" disabled>Pour postuler connectez-vous</button>
             </div>
             <div class="card-footer text-muted">
                 <p>Durée : <?= $emploi['Durée'] ?></p>
