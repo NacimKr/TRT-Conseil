@@ -3,6 +3,24 @@
 require_once "./models/MainManager.model.php";
 
 class GetConsultant extends MainModel {
+
+    private function getPasswordConsultant($login){
+        $requete = "SELECT mdp from consultants where login = :login; ";
+        $connexion = $this->getBDD()->prepare($requete);
+        $connexion->bindValue(':login', $login, PDO::PARAM_STR);
+        $connexion->execute();
+        $resultat = $connexion->fetch(PDO::FETCH_ASSOC);
+        $connexion->closeCursor();
+        return $resultat['mdp'];
+    }
+    
+    public function isValidConsultant($name, $password){
+        //On recupère le mot de passe crypté
+        $passwordBD = $this->getPasswordConsultant($name);
+        //return $passwordBD;
+        return password_verify($password, $passwordBD);
+    }
+
     public function createConsultant($nom, $prenom, $login, $password){
         $req = "INSERT INTO consultants (nom, prenom, login, mdp) VALUES
         (:nom, :prenom, :login, :password);";

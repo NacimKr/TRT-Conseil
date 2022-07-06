@@ -44,13 +44,14 @@
         unset($_SESSION['connecté']);
         unset($_SESSION['postuler']);
         unset($_SESSION['admin']);
+        unset($_SESSION['consultant']);
         header('Location:http://localhost/TRT_CONSEIL/home');
     }
 
 
-    echo "<pre>";
-    var_dump($_SERVER);
-    echo "</pre>";
+    // echo "<pre>";
+    // var_dump($_SERVER);
+    // echo "</pre>";
 
     ?>
 

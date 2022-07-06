@@ -103,6 +103,31 @@ public function vous_avez_postule(){
     require_once "./views/common/template.php";  
 }
 
+public function login_consultant(){
+    ob_start();
+    require_once "./views/consultant/login-consultant.view.php";
+    $page_content = ob_get_clean();
+    require_once "./views/common/template.php";  
+}
+
+public function validation_form_consultant(){
+    if(!empty($_POST['name_consultant']) && !empty($_POST['password_consultant'])){
+        $nameConsultant = htmlentities($_POST['name_consultant']);
+        $passwordConsultant = htmlentities($_POST['password_consultant']);
+
+        $this->getConsultant->isValidConsultant($nameConsultant, $passwordConsultant);
+        ob_start();
+        require_once "./views/consultant/home-consultant-view.php";
+        $page_content = ob_get_clean();
+        require_once "./views/common/template.php";  
+        var_dump($this->getConsultant->isValidConsultant($nameConsultant, $passwordConsultant));
+
+        $_SESSION['consultant'] = [
+            "nameConsultant" => $nameConsultant,
+            "passwordConsultant" => $passwordConsultant
+        ];
+    }
+}
 
 function nos_clients(){
     ob_start();
@@ -194,6 +219,7 @@ public function compte(){
 public function deconnect(){
     unset($_SESSION['connecté']);
     unset($_SESSION['admin']);
+    unset($_SESSION['consultant']);
     $_SESSION['alert'] = [
         "class" => "alert-success",
         "message" => "Vous êtes bien deconnecté"
@@ -298,7 +324,7 @@ public function create_consultant(){
     require_once "./views/common/template.php";
 
     if(isset($_POST['prenom_consultant']) && isset($_POST['nom_consultant']) && isset($_POST['login_consultant']) && isset($_POST['password_consultant'])){
-        $this->getConsultant->createConsultant($_POST['nom_consultant'],$_POST['prenom_consultant'],$_POST['login_consultant'],$_POST['password_consultant']);
+        $this->getConsultant->createConsultant($_POST['nom_consultant'],$_POST['prenom_consultant'],$_POST['login_consultant'], password_hash($_POST['password_consultant'], PASSWORD_DEFAULT));
     }
 }
 

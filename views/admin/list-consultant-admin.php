@@ -20,8 +20,8 @@
     <tbody>
       <tr>
         <th scope="row"></th>
-        <td><?= $consultant["Nom"] ?></td>
-        <td><?= $consultant["Prenom"] ?></td>
+        <td><?= $consultant["nom"] ?></td>
+        <td><?= $consultant["prenom"] ?></td>
         <td><?= $consultant["login"] ?></td>
       </tr>  
   </tbody>

@@ -3,10 +3,11 @@
 </div>
 
 <div class="card mx-auto mb-3 shadow" style="width: 650px; margin-top:-50px;">
+    
     <div class="card-body fw-bold text-center fs-2">CONNECTEZ-VOUS</div>
+    
 
-
-<form action="validation_form" class="container mt-5" style="width:600px;" method="POST">
+    <form action="validation_form" class="container mt-5" style="width:600px;" method="POST">
     <div class="mb-3">
         <label for="name" class="form-label fw-bold">Votre nom</label>
         <input type="text" class="form-control" id="name" name="name" style="background:#dcdcdc">
@@ -29,11 +30,15 @@
     <button type="submit" class="btn btn-secondary d-block mx-auto mb-4">Se connecter</button>
 </form>
 
-    <div class="d-flex justify-content-center mb-4">
-        <a href="create_account" class="text-decoration-none text-dark fw-bold fs-5">Créez votre compte en cliquant ici</a>
-    </div>
+<div class="d-flex justify-content-center mb-4">
+    <a href="create_account" class="text-decoration-none text-dark fw-bold fs-5">Créez votre compte en cliquant ici</a>
+</div>
+<div class="d-flex justify-content-center my-4">
+    <a href="login-consultant" class="text-decoration-none text-light fw-bold fs-5 btn btn btn-success">Accès au compte consultant</a>
+</div>
 
-    <div class="d-flex justify-content-center mb-4">
-        <a href="admin" class="text-decoration-none text-light fw-bold fs-5 btn btn btn-danger">Accès au compte administrateur</a>
-    </div>
+<div class="d-flex justify-content-center mb-4">
+    <a href="admin" class="text-decoration-none text-light fw-bold fs-5 btn btn btn-danger">Accès au compte administrateur</a>
+</div>
+
 </div>

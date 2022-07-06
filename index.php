@@ -79,6 +79,14 @@ switch($params[0]){
             $mainController->consultant();
         break;
 
+        case 'validation_form_consultant':
+            $mainController->validation_form_consultant();
+        break;
+
+        case 'login-consultant':
+            $mainController->login_consultant();
+        break;
+
         case 'admin':
             $mainController->admin();
         break;
