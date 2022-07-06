@@ -27,6 +27,10 @@ class ModelManager extends MainModel{
         return $a_postuler;
     }
 
+    public function getEmploiPostulerCandidats(){
+        
+    }
+
     public function createNewOffresEmploi($poste, $duree, $description, $salaire, $debut, $fin){
         $req = "INSERT INTO emplois (POSTE, Durée, Description, Salaire, heure_debut, heure_fin) VALUES 
         (:poste, :duree, :description, :salaire, :debut, :fin);";
@@ -46,7 +50,7 @@ class ModelManager extends MainModel{
 
 
     public function getEmploiPostule(){
-        $req = "SELECT * FROM `emplois` WHERE emploi_postuler = 'true';";
+        $req = "SELECT * FROM utilisateur INNER JOIN emplois;";
         $stmt = $this->getBDD()->prepare($req);
         $stmt->execute();
         $a_postuler = $stmt->fetchAll(PDO::FETCH_ASSOC);

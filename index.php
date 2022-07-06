@@ -83,6 +83,10 @@ switch($params[0]){
             $mainController->validation_form_consultant();
         break;
 
+        case 'candidats_postule':
+            $mainController->candidats_postule();
+        break;
+
         case 'login-consultant':
             $mainController->login_consultant();
         break;

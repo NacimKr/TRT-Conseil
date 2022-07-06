@@ -2,12 +2,12 @@
     <div class="fs-2 bg-light fw-bold rounded-circle text-center w-25 mx-auto p-4 mt-5">TRT Conseil</div>
 </div>
 
-<div class="card mx-auto mb-3 shadow" style="width: 650px; margin-top:-50px;">
+<div class="card mx-auto mb-2 shadow" style="width: 650px; margin-top:-50px;">
     
-    <div class="card-body fw-bold text-center fs-2">CONNECTEZ-VOUS</div>
+    <div class="card-body fw-bold text-center fs-2">CONNECTEZ-VOUS<br/> EN TANT QUE CANDIDAT OU RECRUTEUR</div>
     
 
-    <form action="validation_form" class="container mt-5" style="width:600px;" method="POST">
+    <form action="validation_form" class="container mt-3" style="width:600px;" method="POST">
     <div class="mb-3">
         <label for="name" class="form-label fw-bold">Votre nom</label>
         <input type="text" class="form-control" id="name" name="name" style="background:#dcdcdc">

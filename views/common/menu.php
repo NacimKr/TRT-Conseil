@@ -20,12 +20,8 @@
         
         <?php elseif(!empty($_SESSION['consultant']['nameConsultant'])) : ?>
           <li class="nav-item">
-            <a class="nav-link text-light" href="candidats">Candidats postule</a>
+            <a class="nav-link text-light" href="candidats_postule">Listes des candidatures</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="contact">Les offres</a>
-          </li>
-
         <?php else :?>
           <li class="nav-item">
             <a class="nav-link text-light" href="candidats">Candidats</a>

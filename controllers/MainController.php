@@ -129,6 +129,14 @@ public function validation_form_consultant(){
     }
 }
 
+public function candidats_postule(){
+    $list_emploi = $this->mainModel->getEmploiPostule();
+    ob_start();
+    require_once "./views/consultant/lists_candidats_postule.view.php";
+    $page_content = ob_get_clean();
+    require_once "./views/common/template.php";  
+}
+
 function nos_clients(){
     ob_start();
     require_once "./views/nos_clients.view.php";
