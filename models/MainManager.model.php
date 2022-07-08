@@ -4,7 +4,7 @@ abstract class MainModel{
     private $dataPDO;
     
     protected function getData(){
-        $this->dataPDO = new PDO('mysql:host=localhost;dbname=trt-conseil','root','');
+        $this->dataPDO = new PDO('mysql:host=eu-cdbr-west-03.cleardb.net;dbname=trt-conseil','root','');
         return $this->dataPDO;
     }
 
