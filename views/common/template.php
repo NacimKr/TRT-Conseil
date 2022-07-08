@@ -9,7 +9,6 @@
 </head>
 <body>
     
-
     <?php 
         if(isset($_SESSION['admin'])){
             require_once "./views/admin/menu-admin.php"; 
@@ -31,15 +30,14 @@
 
 
 
-    <!--Fonction optionnel a retirer -->
+<!--Fonction optionnel a retirer -->
 
-    <form action="" method="POST" >
-        <input type="hidden" name="vider">
-        <button class="btn btn-warning mx-auto d-block mb-5" type="submit">Vider la session</button>
-    </form>
+<form action="" method="POST" >
+    <input type="hidden" name="vider">
+    <button class="btn btn-warning mx-auto d-block mb-5" type="submit">Vider la session</button>
+</form>
 
-    <?php
-    
+<?php
     if(isset($_POST['vider'])){
         unset($_SESSION['connecté']);
         unset($_SESSION['postuler']);
@@ -48,13 +46,7 @@
         unset($_SESSION['recruteur_connecte']);
         header('Location:http://localhost/TRT_CONSEIL/home');
     }
-
-
-    // echo "<pre>";
-    // var_dump($_SERVER);
-    // echo "</pre>";
-
-    ?>
+?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

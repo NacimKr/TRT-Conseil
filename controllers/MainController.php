@@ -41,7 +41,6 @@ public function vos_offres(){
     require_once "./views/common/template.php";
 }
 
-
 public function postuler(){
     echo substr($_GET['page'], 9);
     $get_emploi_by_name = substr($_GET['page'], 9);
@@ -96,7 +95,6 @@ public function validation_form_consultant(){
         $page_content = ob_get_clean();
         require_once "./views/common/template.php";  
         var_dump($this->getConsultant->isValidConsultant($nameConsultant, $passwordConsultant));
-
     }
 }
 
@@ -140,23 +138,25 @@ public function list_candidatures(){
 public function validation_form(){
     
     if(!empty($_POST['name']) && !empty($_POST['password']) && !empty($_POST['role'])){
-
         $nameSecure = htmlspecialchars($_POST['name']);
         $passwordSecure = htmlspecialchars($_POST['password']);
         $getConnexion = $this->getUtilisateur->isValid($nameSecure, $passwordSecure);
 
-        
         if($getConnexion){
             $_SESSION['alert'] = [
                 "class" => "alert-primary",
                 "message" => "Votre connexion a bien été établi"
             ];
             if($_POST['role'] === "recruteurs"){
-                $_SESSION['recruteur_connecte'] = $_POST['role'];
+                $_SESSION['recruteur_connecte'] = [
+                    "recruteur_role" => $_POST['role'],
+                    "recruteur_name" => $nameSecure
+                ];
             }elseif($_POST['role'] === "candidats"){
                 $_SESSION['connecté'] = [
                     "name" => $nameSecure, 
-                    "password" => $passwordSecure
+                    "password" => $passwordSecure,
+                    "role" => $_POST['role']
                 ];
             }elseif($_POST['role'] === "..."){
                 $_SESSION['alert'] = [
@@ -165,7 +165,6 @@ public function validation_form(){
                 ];
                 header('Location:http://localhost/TRT_CONSEIL/login');
                 die();
-
             }else{
                 $_SESSION['alert'] = [
                     "class" => "alert-danger",
@@ -185,7 +184,6 @@ public function validation_form(){
             $page_content = ob_get_clean();
             require_once "./views/common/template.php";
         }
-        
     }else{
         $_SESSION['alert'] = [
             "class" => "alert-danger",
@@ -245,9 +243,6 @@ public function validation_account(){
                 "message" => "Votre compte à bien été créé dans notre base <br/>"
             ];
         }
-        /////////////************************************************** */
-
-        /////////////////////////////********************************** */
     }else{
         $_SESSION['alert'] = [
             "class" => "alert-warning",
@@ -334,7 +329,6 @@ public function admin(){
 }
 
 public function profil_admin(){
-
     $get_admin = $this->getAdministrator->getAdmin();
     $_SESSION['admin'] = [
         "loginAdmin" => "",

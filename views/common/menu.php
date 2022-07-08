@@ -37,15 +37,24 @@
       </ul>
     </div>
 
-      <?php if(!empty($_SESSION['connecté']['name'])) : ?>
-        <div class="d-block text-secondary text-center mb-2 fw-bold">Bienvenue, <?= ucfirst($_SESSION['connecté']['name']) ?></div>
+    <?php if(!empty($_SESSION['recruteur_connecte'])) : ?>
+      <div class="d-block text-secondary text-center mb-2 fw-bold">
+        <div>Bienvenue sur votre espace <?= ucfirst($_SESSION['recruteur_connecte']['recruteur_role']) ?>, <?= ucfirst($_SESSION['recruteur_connecte']['recruteur_name']) ?></div>
         <a href="deconnect"><button class="mx-3 btn btn-danger">Se déconnecter</button></a>
-        <?php elseif(!empty($_SESSION['consultant']['nameConsultant'])) : ?>
-          <div class="d-block text-secondary text-center mb-2 fw-bold">Bienvenue, <?= ucfirst($_SESSION['consultant']['nameConsultant']) ?></div>
+      </div>
+    <?php elseif(!empty($_SESSION['connecté']['name'])) : ?>
+      <div class="d-block text-secondary text-center mb-2 fw-bold">
+        <div>Bienvenue sur votre espace <?= ucfirst($_SESSION['connecté']['role']) ?>, <?= ucfirst($_SESSION['connecté']['name']) ?></div>
+        <a href="deconnect"><button class="mx-3 btn btn-danger">Se déconnecter</button></a>
+      </div>
+    <?php elseif(!empty($_SESSION['consultant']['nameConsultant'])) : ?>
+        <div class="d-block text-secondary text-center mb-2 fw-bold">
+          <div>Bienvenue sur votre espace consultant, <?= ucfirst($_SESSION['consultant']['nameConsultant']) ?></div>
           <a href="deconnect"><button class="mx-3 btn btn-danger">Se déconnecter</button></a>
-          <?php else : ?>
-        <a href="login"><button class="btn btn-secondary">Se connecter</button></a>
-      <?php endif; ?>
+        </div>
+    <?php else : ?>
+      <a href="login"><button class="btn btn-secondary">Se connecter</button></a>
+    <?php endif; ?>
 
   </div>
 </nav>
