@@ -31,8 +31,8 @@
         <label for="role" class="form-label fw-bold">Vous êtes</label>
         <select class="form-select" name="role" id="role" style="background:#dcdcdc">
             <option selected>...</option>
-            <option value="1">Candidats</option>
-            <option value="2">Recruteurs</option>
+            <option value="candidats">Candidats</option>
+            <option value="recruteurs">Recruteurs</option>
         </select>
     </div>
 

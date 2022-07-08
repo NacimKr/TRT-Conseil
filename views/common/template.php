@@ -18,10 +18,8 @@
         }
     ?>
         
-    <?= $page_content ?>
-
     <?php if(isset($_SESSION['alert'])) : ?>
-        <div class="alert <?= $_SESSION['alert']['class'] ?> alert-dismissible fade show" role="alert">
+        <div class="alert <?= $_SESSION['alert']['class'] ?> alert-dismissible fade show text-center fs-3" role="alert" style="position:absolute; z-index:1; width:100%">
             <?= $_SESSION['alert']['message'] ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
@@ -29,6 +27,8 @@
         unset($_SESSION['alert']);
         endif; 
     ?>
+    <?= $page_content ?>
+
 
 
     <!--Fonction optionnel a retirer -->
@@ -45,6 +45,7 @@
         unset($_SESSION['postuler']);
         unset($_SESSION['admin']);
         unset($_SESSION['consultant']);
+        unset($_SESSION['recruteur_connecte']);
         header('Location:http://localhost/TRT_CONSEIL/home');
     }
 

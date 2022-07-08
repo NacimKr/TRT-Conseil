@@ -8,21 +8,21 @@
       <ul class="navbar-nav mx-auto ">
 
       <?php if(!empty($_SESSION['connecté']['name'])) : ?>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="http://localhost/TRT_CONSEIL/">Votre Profil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="http://localhost/TRT_CONSEIL/vos_offres">Offres Emploi</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="http://localhost/TRT_CONSEIL/vous_avez_postule">Vous avez postulé ?</a>
-        </li>
-        
-        <?php elseif(!empty($_SESSION['consultant']['nameConsultant'])) : ?>
           <li class="nav-item">
-            <a class="nav-link text-light" href="candidats_postule">Listes des candidatures</a>
+            <a class="nav-link text-light" href="http://localhost/TRT_CONSEIL/">Votre Profil</a>
           </li>
-        <?php else :?>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="http://localhost/TRT_CONSEIL/vos_offres">Offres Emploi</a>
+          </li>
+      <?php elseif(!empty($_SESSION['consultant']['nameConsultant'])) : ?>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="candidats_postule">Listes des candidatures total</a>
+          </li>
+      <?php elseif(!empty($_SESSION['recruteur_connecte'])) : ?>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="list_candidature">Listes des candidatures</a>
+          </li>
+      <?php else :?>
           <li class="nav-item">
             <a class="nav-link text-light" href="candidats">Candidats</a>
           </li>
@@ -32,7 +32,7 @@
           <li class="nav-item">
             <a class="nav-link text-light" href="contact">Contact</a>
           </li>
-          <?php endif; ?>
+      <?php endif; ?>
 
       </ul>
     </div>
@@ -49,4 +49,3 @@
 
   </div>
 </nav>
-

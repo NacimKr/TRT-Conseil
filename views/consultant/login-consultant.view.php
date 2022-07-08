@@ -9,12 +9,12 @@
     <form action="validation_form_consultant" class="container mt-5" style="width:600px;" method="POST">
         <div class="mb-3">
             <label for="name_consultant" class="form-label fw-bold">Votre nom</label>
-            <input type="text" class="form-control" id="name_consultant" name="name_consultant" style="background:#dcdcdc">
+            <input type="text" class="form-control" id="name_consultant" name="name_consultant" style="background:#dcdcdc" required>
         </div>
 
         <div class="mb-3">
             <label for="password_consultant" class="form-label fw-bold">Votre mot de passe</label>
-            <input type="password_consultant" class="form-control" id="password_consultant" name="password_consultant" style="background:#dcdcdc">
+            <input type="password_consultant" class="form-control" id="password_consultant" name="password_consultant" style="background:#dcdcdc" required>
         </div>
 
         <button type="submit" class="btn btn-secondary d-block mx-auto my-4">Se connecter</button>

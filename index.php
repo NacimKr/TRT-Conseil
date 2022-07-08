@@ -63,6 +63,10 @@ switch($params[0]){
             $mainController->offres_emploi();
         break;
 
+        case 'list_candidature':
+            $mainController->list_candidatures();
+        break;
+
         case 'candidat':
             $mainController->candidat();
         break;
@@ -97,10 +101,6 @@ switch($params[0]){
 
         case 'profil_admin':
             $mainController->profil_admin();
-        break;
-
-        case 'vous_avez_postule':
-            $mainController->vous_avez_postule();
         break;
         
         default: throw new Exception("La page existe pas !");

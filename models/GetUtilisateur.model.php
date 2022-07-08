@@ -50,9 +50,21 @@ public function tableFusion(){
     $req = "SELECT * FROM utilisateur u INNER JOIN emplois e ON u.a_postuler = e.emploi_postuler;";
     $stmt = $this->getBDD()->prepare($req);
     $stmt->execute();
-    $a_postuler = $stmt->fetch(PDO::FETCH_ASSOC);
+    $a_postuler = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
     return $a_postuler;
+}
+
+public function ifRoleIsRecruteur(){
+    // A faire
+    // Je dois faire la requete pour prendre le role recruteur puis checker si c'est true
+    // afin d'afficher dans le menu Liste des candidatures si l'utilisateur est un recruteur
+    $requete = "SELECT role from utilisateur where role = 'recruteurs' ";
+    $connexion = $this->getBDD()->prepare($requete);
+    $connexion->execute();
+    $resultat = $connexion->fetch(PDO::FETCH_ASSOC);
+    $connexion->closeCursor();
+    return $resultat;
 }
 
 /**********************************************************************************************/

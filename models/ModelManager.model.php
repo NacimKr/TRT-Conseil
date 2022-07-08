@@ -3,6 +3,7 @@ require "MainManager.model.php";
 
 /* Class liés a la connexion de la BDD pour faires des requetes sur les offres d'emplois */
 class ModelManager extends MainModel{
+
     public function getAllDataFromDB(){
         $req = $this->getBDD()->prepare("SELECT * FROM `emplois`");
         $req->execute();
@@ -27,8 +28,21 @@ class ModelManager extends MainModel{
         return $a_postuler;
     }
 
-    public function getEmploiPostulerCandidats(){
-        
+    public function candidatsAPostuler(){
+        $req = "UPDATE `utilisateur` SET a_postuler = 'true';";
+        $stmt = $this->getBDD()->prepare($req);
+        $stmt->execute();
+        $a_postuler = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $a_postuler;
+    }
+
+    public function getEmploiNameToUtilisateursTable(){
+        $req = "SELECT * FROM `utilisateur` u INNER JOIN `emplois` e ON e.emploi_postuler = u.a_postuler";
+        $stmt = $this->getBDD()->prepare($req);
+        //$stmt->bindValue(':poste', $poste, PDO::PARAM_STR);
+        $stmt->execute();
+        $a_postuler = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $a_postuler;
     }
 
     public function createNewOffresEmploi($poste, $duree, $description, $salaire, $debut, $fin){
@@ -47,7 +61,6 @@ class ModelManager extends MainModel{
         $stmt->closeCursor();
         return $emploi_datas;
     }
-
 
     public function getEmploiPostule(){
         $req = "SELECT * FROM utilisateur INNER JOIN emplois;";

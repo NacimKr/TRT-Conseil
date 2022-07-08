@@ -8,8 +8,6 @@
 </div>
 </div>
 
-
-
 <button type="submit" class="d-block mx-auto m-5 btn btn-secondary">
     <a href="create_account" class="text-decoration-none text-light">Inscrivez vous</a>
 </button>

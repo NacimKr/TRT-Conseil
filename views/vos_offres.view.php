@@ -16,7 +16,6 @@
             <p class="card-text"><?= $emploi['Description'] ?></p>
             <p>Salaire : <?= $emploi['Salaire'] ?>€</p>
 
-
                 <a href="postuler/<?= $emploi['POSTE'] ?>" class="text-decoration-none text-light">
                     <button type="submit" class="btn btn-primary mx-auto"
                         <?php foreach($emploi_datas as $emploi){
@@ -28,7 +27,6 @@
                         }?>
                     >Postuler</button>
                 </a>
-
 
         </div>
         <div class="card-footer text-muted">

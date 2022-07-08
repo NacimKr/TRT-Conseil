@@ -10,20 +10,20 @@
     <form action="validation_form" class="container mt-3" style="width:600px;" method="POST">
     <div class="mb-3">
         <label for="name" class="form-label fw-bold">Votre nom</label>
-        <input type="text" class="form-control" id="name" name="name" style="background:#dcdcdc">
+        <input type="text" class="form-control" id="name" name="name" style="background:#dcdcdc" required>
     </div>
 
     <div class="mb-3">
         <label for="password" class="form-label fw-bold">Votre mot de passe</label>
-        <input type="password" class="form-control" id="password" name="password" style="background:#dcdcdc">
+        <input type="password" class="form-control" id="password" name="password" style="background:#dcdcdc" required>
     </div>
 
     <div class="mb-3">
-        <label for="vous-etes" class="form-label fw-bold mb-3">Vous êtes</label>
-        <select class="form-select mb-4" name="vous-etes" id="vous-etes" style="background:#dcdcdc">
+        <label for="role" class="form-label fw-bold">Vous êtes</label>
+        <select class="form-select" name="role" id="role" style="background:#dcdcdc" required>
             <option selected>...</option>
-            <option value="1">Candidats</option>
-            <option value="2">Recruteurs</option>
+            <option value="candidats">Candidats</option>
+            <option value="recruteurs">Recruteurs</option>
         </select>
     </div>
 

@@ -8,4 +8,3 @@
 </svg>
 <a href="home" class="text-decoration-none text-light">Retour à l'accueil</a>
 </button>
-

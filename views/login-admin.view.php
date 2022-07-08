@@ -9,12 +9,12 @@
 <form action="profil_admin" class="container mt-5" style="width:600px;" method="POST">
     <div class="mb-3">
         <label for="name-admin" class="form-label fw-bold">Votre login admin</label>
-        <input type="text" class="form-control" id="name-admin" name="name-admin" style="background:#dcdcdc">
+        <input type="text" class="form-control" id="name-admin" name="name-admin" style="background:#dcdcdc" required>
     </div>
 
     <div class="mb-3">
         <label for="password-admin" class="form-label fw-bold">Votre mot de passe admin</label>
-        <input type="password" class="form-control" id="password-admin" name="password-admin" style="background:#dcdcdc">
+        <input type="password" class="form-control" id="password-admin" name="password-admin" style="background:#dcdcdc" required>
     </div>
 
     <button type="submit" class="btn btn-secondary d-block mx-auto mb-4">Se connecter</button>
