@@ -9,10 +9,10 @@
 
       <?php if(!empty($_SESSION['connecté']['name'])) : ?>
           <li class="nav-item">
-            <a class="nav-link text-light" href="http://localhost/TRT_CONSEIL/">Votre Profil</a>
+            <a class="nav-link text-light" href="<?= URL ?>">Votre Profil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="http://localhost/TRT_CONSEIL/vos_offres">Offres Emploi</a>
+            <a class="nav-link text-light" href="<?= URL ?>/vos_offres">Offres Emploi</a>
           </li>
       <?php elseif(!empty($_SESSION['consultant']['nameConsultant'])) : ?>
           <li class="nav-item">

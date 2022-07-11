@@ -163,14 +163,14 @@ public function validation_form(){
                     "class" => "alert-danger",
                     "message" => "Veuillez saisir le champs <i>'Vous êtes'</i>"
                 ];
-                header('Location:http://localhost/TRT_CONSEIL/login');
+                header('Location:'.URL.'/login');
                 die();
             }else{
                 $_SESSION['alert'] = [
                     "class" => "alert-danger",
                     "message" => "Veuillez saisir les renseignements demandées"
                 ];
-                header('Location:http://localhost/TRT_CONSEIL/login');
+                header('Location:'.URL.'/login');
                 die();
             }
 
@@ -189,7 +189,7 @@ public function validation_form(){
             "class" => "alert-danger",
             "message" => "Vous n'avez rien saisi, Merci de renseigner les champs ci-dessous"
         ];
-        header('Location:https://trt-conseil-app.herokuapp.com/login');
+        header('Location:'.URL.'login');
     }
 }
 /**********************************************************************************************/
@@ -214,7 +214,7 @@ public function deconnect(){
         "class" => "alert-success",
         "message" => "Vous êtes bien deconnecté"
     ];
-    header('Location:https://trt-conseil-app.herokuapp.com/home');
+    header('Location:'.URL.'home');
 }
 
 public function create_account(){
@@ -284,7 +284,7 @@ public function create_emploi(){
     require_once "./views/common/template.php";
     if(isset($_POST['poste']) && isset($_POST['duration']) && isset($_POST['description'])){
         $annoncePublier = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']);
-        header('Location:https://trt-conseil-app.herokuapp.com/offres_emploi');
+        header('Location:'.URL.'/offres_emploi');
         if($annoncePublier){
             $_SESSION['alert'] = [
                 "class" => "alert-primary",
