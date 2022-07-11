@@ -100,6 +100,7 @@ public function validation_form_consultant(){
 
 
 public function nouvelle_offre(){
+    $emplois_recr = $this->mainModel->getAllDataFromDB();
     ob_start();
     require_once "./views/recruteur/nouvelle_offre.view.php";
     $page_content = ob_get_clean();
