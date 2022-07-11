@@ -13,9 +13,8 @@
     <thead class="table-dark">
     <tr>
       <th scope="col"></th>
-      <th scope="col">Nom</th>
-      <th scope="col">Prénom</th>
-      <th scope="col">Login</th>
+      <th scope="col">Identifiant</th>
+      <th scope="col">Email</th>
     </tr>
   </thead>
     <?php foreach($candidats_datas as $candidat) : ?>
