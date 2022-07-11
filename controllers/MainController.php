@@ -308,13 +308,13 @@ public function create_emploi(){
     require_once "./views/common/template.php";
     if(isset($_POST['poste']) && isset($_POST['duration']) && isset($_POST['description'])){
         $annoncePublier = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']);
-        header('Location:'.URL.'/offres_emploi');
-        if($annoncePublier){
-            $_SESSION['alert'] = [
-                "class" => "alert-primary",
-                "message" => "Votre annonce à bien été publié"
-            ];
-        }
+        // header('Location:'.URL.'/offres_emploi');
+        // if($annoncePublier){
+        //     $_SESSION['alert'] = [
+        //         "class" => "alert-primary",
+        //         "message" => "Votre annonce à bien été publié"
+        //     ];
+        // }
     }
 }
 
@@ -325,7 +325,7 @@ public function publierAnnonce($emploi){
 public function publierLesCandidats($candidats){
     return $candidats;
 }
-
+/////////////////
 public function create_consultant(){
     ob_start();
     require_once "./views/admin/consultant-admin.php";
