@@ -71,8 +71,6 @@ public function postuler(){
     //var_dump($this->mainModel->getEmploiNameToUtilisateursTable());
 }
 
-/*************************************************** */
-
 public function login_consultant(){
     ob_start();
     require_once "./views/consultant/login-consultant.view.php";
@@ -223,8 +221,6 @@ public function validation_form(){
         header('Location:'.URL.'login');
     }
 }
-/**********************************************************************************************/
-/**********************************************************************************************/
 
 public function compte(){
     ob_start();
@@ -297,7 +293,7 @@ public function offres_emploi(){
     $this->publierAnnonce($emplois);
     require_once "./views/common/template.php";
 }
-///*////////
+
 public function candidat(){
     $candidats_datas = $this->getUtilisateur->getAllCandidats();
     ob_start();
@@ -306,7 +302,7 @@ public function candidat(){
     //$candidats = $this->getUtilisateur->getAllCandidats();
     require_once "./views/common/template.php";
 }
-////////////
+
 public function create_emploi(){
     ob_start();
     require_once "./views/admin/form-create-emploi-admin.php";
@@ -351,7 +347,6 @@ public function consultant(){
     $page_content = ob_get_clean();
     require_once "./views/common/template.php";
 }
-
 
 public function admin(){
     ob_start();
