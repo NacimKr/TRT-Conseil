@@ -11,7 +11,7 @@
 <?php else : ?>
 
 <?php foreach($emploi_datas as $emploi) : ?>
-    <div class="card text-center d-inline-block my-5 mx-3 shadow" style="width:350px">
+    <div class="card text-center d-inline-block my-5 mx-3 shadow text-center" style="width:350px">
         <div class="card-header">
             <p><strong>Intitulé du poste </strong><br/><?= $emploi['POSTE'] ?></p>
         </div>
