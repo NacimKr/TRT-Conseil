@@ -111,17 +111,17 @@ public function create_emploi_recr(){
     require_once "./views/recruteur/create_emploi_recr.view.php";
     $page_content = ob_get_clean();
     require_once "./views/common/template.php";
-    //if(isset($_POST['poste']) && isset($_POST['duration']) && isset($_POST['description']) && isset($_POST['debut']) && isset($_POST['fin']) && isset($_POST['salary'])){
+    if(isset($_POST['poste']) && isset($_POST['duration']) && isset($_POST['description']) && isset($_POST['debut']) && isset($_POST['fin']) && isset($_POST['salary'])){
         $annoncePublier = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']);
         header('Location:'.URL."/nouvelle_offre");
-        // if($annoncePublier){
-        //     $_SESSION['alert'] = [
-        //         "class" => "alert-primary",
-        //         "message" => "Votre annonce à bien été publié"
-        //     ];
-        // }
         var_dump($annoncePublier);
-    //}
+        if($annoncePublier){
+            $_SESSION['alert'] = [
+                "class" => "alert-primary",
+                "message" => "Votre annonce à bien été publié"
+            ];
+        }
+    }
 }
 
 public function candidats_postule(){
@@ -308,13 +308,13 @@ public function create_emploi(){
     require_once "./views/common/template.php";
     if(isset($_POST['poste']) && isset($_POST['duration']) && isset($_POST['description'])){
         $annoncePublier = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']);
-        // header('Location:'.URL.'/offres_emploi');
-        // if($annoncePublier){
-        //     $_SESSION['alert'] = [
-        //         "class" => "alert-primary",
-        //         "message" => "Votre annonce à bien été publié"
-        //     ];
-        // }
+        header('Location:'.URL.'/offres_emploi');
+        if($annoncePublier){
+            $_SESSION['alert'] = [
+                "class" => "alert-primary",
+                "message" => "Votre annonce à bien été publié"
+            ];
+        }
     }
 }
 
