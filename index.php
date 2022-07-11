@@ -81,6 +81,10 @@ switch($params[0]){
             $mainController->nouvelle_offre();
         break;
 
+        case 'create_emploi_recr';
+            $mainController->create_emploi_recr();
+        break;
+
         case 'create_emploi':
             $mainController->create_emploi();
         break;
