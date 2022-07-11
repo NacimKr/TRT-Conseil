@@ -6,6 +6,10 @@
     <div class="card-body fw-bold text-center fs-2 text-uppercase shadow">Offres d'emploi</div>
 </div>
 
+<?php if(count($emploi_datas) <= 0) : ?>
+    <p class="text-danger fs-3 fw-bold">Il n'y a pas d'offres pour le moment</p>
+<?php else : ?>
+
 <?php foreach($emploi_datas as $emploi) : ?>
     <div class="card text-center d-inline-block my-5 mx-3 shadow" style="width:350px">
         <div class="card-header">
@@ -34,6 +38,7 @@
         </div>
     </div>
 <?php endforeach; ?>
+<?php endif; ?>
 
 
 
