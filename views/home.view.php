@@ -9,45 +9,4 @@
         <a href="#" class="btn btn-danger d-block mx-auto w-50">Télécharger nos fiche de présentation</a>
     </div>
 </div>
-
-<h2 class="mt-5 text-center">Notre Équipe</h2>
-<div class="d-flex justify-content-center gap-3">
-
-    <div class="card" style="width: 18rem;">
-      <div class="card-img-top bg-primary p-5"></div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    
-    <div class="card" style="width: 18rem;">
-    <div class="card-img-top bg-primary p-5"></div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    
-    <div class="card" style="width: 18rem;">
-    <div class="card-img-top bg-primary p-5"></div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    
-    <div class="card" style="width: 18rem;">
-    <div class="card-img-top">
-      <img src="./img/equipe/administration.jpg" alt="">
-    </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
 </div>
