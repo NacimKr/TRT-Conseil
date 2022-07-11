@@ -27,3 +27,7 @@
      </tbody>
     <?php endforeach; ?> 
 <?php endif; ?>
+
+<?php 
+    var_dump($candidats_datas);
+?>
