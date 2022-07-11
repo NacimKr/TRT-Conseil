@@ -114,6 +114,7 @@ public function nouvelle_offre(){
             ];
         }
 }
+}
 
 public function candidats_postule(){
     $list_emploi = $this->mainModel->getEmploiPostule();
