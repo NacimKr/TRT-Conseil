@@ -4,7 +4,7 @@ abstract class MainModel{
     private $dataPDO;
     
     protected function getData(){
-        $this->dataPDO = new PDO('mysql:oliadkuxrl9xdugh.chr7pe7iynqr.eu-west-1.rds.amazonaws.com;dbname=adj73r9o9rrxl3t9','c4zou5oac9nqvelm','bboa90r0kdk6nd55');
+        $this->dataPDO = new PDO('mysql:eu-cdbr-west-03.cleardb.net;dbname=heroku_b4db8dab6c946a0','b77392b59a7748','2f3865fa');
         return $this->dataPDO;
     }
 
