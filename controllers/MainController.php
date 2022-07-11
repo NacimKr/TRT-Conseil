@@ -4,6 +4,8 @@ require_once "./models/GetUtilisateur.model.php";
 require_once "./models/GetConsultant.model.php";
 require_once "./models/GetAdmin.model.php";
 
+var_dump(URL);
+
 class MainController{
 
     private $mainModel;
@@ -163,14 +165,14 @@ public function validation_form(){
                     "class" => "alert-danger",
                     "message" => "Veuillez saisir le champs <i>'Vous êtes'</i>"
                 ];
-                header('Location:'.URL.'/login');
+                header('Location:'.URL.'login');
                 die();
             }else{
                 $_SESSION['alert'] = [
                     "class" => "alert-danger",
                     "message" => "Veuillez saisir les renseignements demandées"
                 ];
-                header('Location:'.URL.'/login');
+                header('Location:'.URL.'login');
                 die();
             }
 
