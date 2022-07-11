@@ -56,7 +56,6 @@ class ModelManager extends MainModel{
         $stmt->bindValue(':debut', $debut, PDO::PARAM_STR);
         $stmt->bindValue(':fin', $fin, PDO::PARAM_STR);
         $stmt->execute();
-        $emploi_datas = $stmt->rowCount() > 0;
         $emploi_datas = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
         return $emploi_datas;
