@@ -22,6 +22,9 @@
           <li class="nav-item">
             <a class="nav-link text-light" href="list_candidature">Listes des candidatures</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="nouvelle_offre">Publier une nouvelle offres</a>
+          </li>
       <?php else :?>
           <li class="nav-item">
             <a class="nav-link text-light" href="<?= URL ?>candidats">Candidats</a>

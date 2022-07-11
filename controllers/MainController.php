@@ -98,6 +98,15 @@ public function validation_form_consultant(){
     }
 }
 
+
+public function nouvelle_offre(){
+    ob_start();
+    require_once "./views/recruteur/nouvelle_offre.view.php";
+    $page_content = ob_get_clean();
+    require_once "./views/common/template.php";
+
+}
+
 public function candidats_postule(){
     $list_emploi = $this->mainModel->getEmploiPostule();
     ob_start();

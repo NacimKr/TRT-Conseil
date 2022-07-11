@@ -77,6 +77,10 @@ switch($params[0]){
             $mainController->candidat();
         break;
 
+        case 'nouvelle_offre':
+            $mainController->nouvelle_offre();
+        break;
+
         case 'create_emploi':
             $mainController->create_emploi();
         break;
