@@ -9,6 +9,7 @@
 <?php if(count($candidats_datas)<= 0) : ?>
     <p class="text-center text-danger fs-3 fw-bold">Vous n'avez aucun candidat pour le moment</p>
 <?php else :?>
+    <table class="border rounded mt-5 table table-hover container table-striped">
     <thead class="table-dark">
     <tr>
       <th scope="col"></th>
@@ -24,6 +25,6 @@
         <td><?= $consultant["login"] ?></td>
         <td><?= $consultant["email"] == "" ? "<b>pas renseigné</b>" : $candidat['email'] ?></td>
       </tr>  
-    </tbody>
+     </tbody>
     <?php endforeach; ?> 
 <?php endif; ?>
