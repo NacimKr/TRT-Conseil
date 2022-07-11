@@ -4,8 +4,6 @@ require_once "./models/GetUtilisateur.model.php";
 require_once "./models/GetConsultant.model.php";
 require_once "./models/GetAdmin.model.php";
 
-var_dump(URL);
-
 class MainController{
 
     private $mainModel;
