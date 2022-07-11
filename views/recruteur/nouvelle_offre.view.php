@@ -6,7 +6,7 @@
     <div class="card-body fw-bold text-center fs-2 text-uppercase shadow">La liste des offres d'emploi</div>
 </div>
 
-<form action="create_emploi">
+<form action="create_emploi_recr">
     <button type="submit" class="btn btn-danger d-block mx-auto m-5">Publier une nouvelle offre</button>
 </form>
 
