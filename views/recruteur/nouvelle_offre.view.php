@@ -9,7 +9,3 @@
 <a href="create_emploi_recr" class="text-decoration-none">
     <button type="submit" class="btn btn-danger d-block mx-auto m-5">Publier une nouvelle offre</button>
 </a>
-
-<?php
-
-var_dump($emploi_recr);

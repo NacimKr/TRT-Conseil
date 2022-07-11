@@ -98,11 +98,11 @@ public function validation_form_consultant(){
 
 public function nouvelle_offre(){
     $emplois_recr = $this->mainModel->getAllDataFromDB();
-    var_dump($emplois_recr);
     ob_start();
     require_once "./views/recruteur/nouvelle_offre.view.php";
     $page_content = ob_get_clean();
     require_once "./views/common/template.php";
+    var_dump($emplois_recr);
 }
 
 public function create_emploi_recr(){
