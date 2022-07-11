@@ -46,7 +46,7 @@ class ModelManager extends MainModel{
     }
 
     public function createNewOffresEmploi($poste, $duree, $description, $salaire, $debut, $fin){
-        $req = "INSERT INTO emplois (POSTE, Durée, Description, Salaire, heure_debut, heure_fin, emploi_postuler) VALUES 
+        $req = "INSERT INTO emplois (POSTE, Durée, Description, Salaire, heure_debut, heure_fin) VALUES 
         (:poste, :duree, :description, :salaire, :debut, :fin);";
         $stmt = $this->getBDD()->prepare($req);
         $stmt->bindValue(':poste', $poste, PDO::PARAM_STR);
