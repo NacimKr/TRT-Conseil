@@ -21,13 +21,9 @@
     <tbody>
       <tr>
         <th scope="row"></th>
-        <td><?= $consultant["login"] ?></td>
-        <td><?= $consultant["email"] == "" ? "<b>pas renseigné</b>" : $candidat['email'] ?></td>
+        <td><?= $candidat["login"] ?></td>
+        <td><?= $candidat["email"] == "" ? "<b>pas renseigné</b>" : $candidat['email'] ?></td>
       </tr>  
      </tbody>
     <?php endforeach; ?> 
 <?php endif; ?>
-
-<?php 
-    var_dump($candidats_datas);
-?>
