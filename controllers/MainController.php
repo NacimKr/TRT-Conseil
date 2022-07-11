@@ -113,13 +113,17 @@ public function create_emploi_recr(){
     $page_content = ob_get_clean();
     require_once "./views/common/template.php";
     if(isset($_POST['poste']) && isset($_POST['duration']) && isset($_POST['description']) && isset($_POST['salary'])){
-        $annoncePublier = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']);
-        if($annoncePublier){
-            $_SESSION['alert'] = [
-                "class" => "alert-primary",
-                "message" => "Votre annonce à bien été publié"
-            ];
-        }
+        // $annoncePublier = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']);
+        // if($annoncePublier){
+        //     $_SESSION['alert'] = [
+        //         "class" => "alert-primary",
+        //         "message" => "Votre annonce à bien été publié"
+        //     ];
+        // }
+        echo $_POST['poste']."<br/>";
+        echo $_POST['duration']."<br/>";
+        echo $_POST['description']."<br/>";
+        echo $_POST['salary'];
     }else{
         echo "La requete n'a pas fonctionnée";
     }
