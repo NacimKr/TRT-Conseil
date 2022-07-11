@@ -41,7 +41,9 @@
     </div>
     
     <div class="card" style="width: 18rem;">
-    <div class="card-img-top bg-primary p-5"></div>
+    <div class="card-img-top">
+      <img src="./img/equipe/administration.jpg" alt="">
+    </div>
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

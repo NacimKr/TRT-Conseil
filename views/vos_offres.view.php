@@ -7,7 +7,7 @@
 </div>
 
 <?php if(count($emploi_datas) <= 0) : ?>
-    <p class="text-danger fs-3 fw-bold text-center">Il n'y a pas d'offres pour le moment</p>
+    <p class="text-danger fs-3 fw-bold text-center mt-5">Il n'y a pas d'offres pour le moment</p>
 <?php else : ?>
 
 <?php foreach($emploi_datas as $emploi) : ?>
