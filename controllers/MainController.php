@@ -116,7 +116,7 @@ public function create_emploi_recr(){
     require_once "./views/common/template.php";
     if(isset($_POST['poste']) && isset($_POST['duration']) && isset($_POST['description']) && isset($_POST['debut']) && isset($_POST['fin']) && isset($_POST['salary'])){
         $annoncePublier = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']);
-        header('Location:'.URL."/nouvelle/offre");
+        header('Location:'.URL."/nouvelle_offre");
         // if($annoncePublier){
         //     $_SESSION['alert'] = [
         //         "class" => "alert-primary",
