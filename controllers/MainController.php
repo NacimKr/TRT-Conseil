@@ -119,6 +119,8 @@ public function create_emploi_recr(){
                 "class" => "alert-primary",
                 "message" => "Votre annonce à bien été publié"
             ];
+        }else{
+            echo "La requete n'a pas fonctionnée";
         }
     }
 }
