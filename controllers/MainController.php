@@ -104,6 +104,10 @@ public function nouvelle_offre(){
     require_once "./views/recruteur/nouvelle_offre.view.php";
     $page_content = ob_get_clean();
     require_once "./views/common/template.php";
+    echo $_POST['poste']."<br/>";
+    echo $_POST['duration']."<br/>";
+    echo $_POST['description']."<br/>";
+    echo $_POST['salary'];
 }
 
 public function create_emploi_recr(){
@@ -120,12 +124,6 @@ public function create_emploi_recr(){
         //         "message" => "Votre annonce à bien été publié"
         //     ];
         // }
-        echo $_POST['poste']."<br/>";
-        echo $_POST['duration']."<br/>";
-        echo $_POST['description']."<br/>";
-        echo $_POST['salary'];
-    }else{
-        echo "La requete n'a pas fonctionnée";
     }
 }
 
