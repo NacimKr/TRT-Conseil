@@ -5,7 +5,7 @@ LUNDI 27/06/2022
 - Création des fichiers MVC et du .htacces pour le routage
 - Mis en place des différentes pages
 - Création de la base de données mySQL pour les offres d'emplois
-- Et connexion et recupération de ces données sur la page "Candidats"
+- Et connexion et recupération de ces données sur la page "Offres d'emploi"
 
 -----------------------------------------------------------------------------------
 

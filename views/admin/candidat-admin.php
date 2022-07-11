@@ -6,9 +6,24 @@
     <div class="card-body fw-bold text-center fs-2 text-uppercase shadow">Les Candidats Inscrits</div>
 </div>
 
-<?php foreach($candidats_datas as $candidat) : ?>
-    <div class="card mb-3 d-inline-block mx-4 mt-5 p-4" style="width:450px">
-        <p><?= $candidat['login'] ?></p>    
-        <p><?= $candidat['email'] == "" ? "<b>pas renseigné</b>" : $candidat['email'] ?></p>
-    </div>
-<?php endforeach; ?>
+<?php if(count($candidats_datas)<= 0) : ?>
+    <p class="text-center text-danger fs-3 fw-bold">Vous n'avez aucun candidat pour le moment</p>
+<?php else :?>
+    <thead class="table-dark">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Login</th>
+    </tr>
+  </thead>
+    <?php foreach($candidats_datas as $candidat) : ?>
+    <tbody>
+      <tr>
+        <th scope="row"></th>
+        <td><?= $consultant["login"] ?></td>
+        <td><?= $consultant["email"] == "" ? "<b>pas renseigné</b>" : $candidat['email'] ?></td>
+      </tr>  
+    </tbody>
+    <?php endforeach; ?> 
+<?php endif; ?>
