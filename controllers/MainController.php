@@ -98,7 +98,6 @@ public function validation_form_consultant(){
     }
 }
 
-
 public function nouvelle_offre(){
     $emplois_recr = $this->mainModel->getAllDataFromDB();
     ob_start();
