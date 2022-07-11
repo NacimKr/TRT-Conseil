@@ -342,7 +342,7 @@ public function profil_admin(){
             require_once "./views/admin/home-admin.php";
             $page_content = ob_get_clean();
             require_once "./views/common/template.php";
-            var_dump($get_admin);
+            //var_dump($get_admin);
         }else{
             unset($_SESSION['admin']);
             ob_start();
