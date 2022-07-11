@@ -6,7 +6,7 @@
     <div class="card-body fw-bold text-center fs-2 text-uppercase shadow">Publier votre offre</div>
 </div>
 
-<form action="nouvelle_offre" class="container mt-5" style="width:700px;" method="POST">
+<form class="container mt-5" style="width:700px;" method="POST">
     <div class="mb-3">
         <label for="poste" class="form-label">Intitulé du Poste</label>
         <input type="text" class="form-control" name="poste" id="poste" style="background:#dcdcdc" required>
