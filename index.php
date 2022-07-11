@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS'])? "https" : "http").
+"://".$_SERVER['HTTP_HOST'].$_SERVER["PHP_SELF"]));
+
+var_dump(URL);
+
 require_once "./controllers/MainController.php";
 $mainController = new MainController();
 

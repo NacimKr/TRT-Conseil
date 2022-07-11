@@ -189,7 +189,7 @@ public function validation_form(){
             "class" => "alert-danger",
             "message" => "Vous n'avez rien saisi, Merci de renseigner les champs ci-dessous"
         ];
-        header('Location:http://localhost/TRT_CONSEIL/login');
+        header('Location:https://trt-conseil-app.herokuapp.com/login');
     }
 }
 /**********************************************************************************************/
@@ -214,7 +214,7 @@ public function deconnect(){
         "class" => "alert-success",
         "message" => "Vous êtes bien deconnecté"
     ];
-    header('Location:http://localhost/TRT_CONSEIL/home');
+    header('Location:https://trt-conseil-app.herokuapp.com/home');
 }
 
 public function create_account(){
@@ -284,7 +284,7 @@ public function create_emploi(){
     require_once "./views/common/template.php";
     if(isset($_POST['poste']) && isset($_POST['duration']) && isset($_POST['description'])){
         $annoncePublier = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']);
-        header('Location:http://localhost/TRT_CONSEIL/offres_emploi');
+        header('Location:https://trt-conseil-app.herokuapp.com/offres_emploi');
         if($annoncePublier){
             $_SESSION['alert'] = [
                 "class" => "alert-primary",
@@ -320,6 +320,7 @@ public function consultant(){
     $page_content = ob_get_clean();
     require_once "./views/common/template.php";
 }
+
 
 public function admin(){
     ob_start();
