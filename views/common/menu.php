@@ -24,13 +24,13 @@
           </li>
       <?php else :?>
           <li class="nav-item">
-            <a class="nav-link text-light" href="<?= URL ?>/candidats">Candidats</a>
+            <a class="nav-link text-light" href="<?= URL ?>candidats">Candidats</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="<?= URL ?>/nos_clients">Nos Clients</a>
+            <a class="nav-link text-light" href="<?= URL ?>nos_clients">Nos Clients</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="<?= URL ?>/contact">Contact</a>
+            <a class="nav-link text-light" href="<?= URL ?>contact">Contact</a>
           </li>
       <?php endif; ?>
 
