@@ -107,11 +107,12 @@ public function nouvelle_offre(){
 }
 
 public function create_emploi_recr(){
-    $emplois_recr = $this->mainModel->getAllDataFromDB();
-    ob_start();
-    require_once "./views/recruteur/create_emploi_recr.view.php";
-    $page_content = ob_get_clean();
-    require_once "./views/common/template.php";
+    // $emplois_recr = $this->mainModel->getAllDataFromDB();
+    // ob_start();
+    // require_once "./views/recruteur/create_emploi_recr.view.php";
+    // $page_content = ob_get_clean();
+    // require_once "./views/common/template.php";
+    echo "covbjsg";
 }
 
 public function candidats_postule(){
