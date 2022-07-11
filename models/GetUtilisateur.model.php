@@ -88,7 +88,7 @@ public function aPostuler($poste){
 }
 
 public function getAllCandidats(){
-    $requete = "SELECT * from utilisateur WHERE role != 'Administrateur' ";
+    $requete = "SELECT * from utilisateur WHERE role = 'candidats' ";
     $connexion = $this->getBDD()->prepare($requete);
     $connexion->execute();
     $resultat = $connexion->fetchAll();
