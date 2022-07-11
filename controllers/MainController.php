@@ -104,16 +104,6 @@ public function nouvelle_offre(){
     require_once "./views/recruteur/nouvelle_offre.view.php";
     $page_content = ob_get_clean();
     require_once "./views/common/template.php";
-    if(isset($_POST['poste']) && isset($_POST['duration']) && isset($_POST['description'])){
-        $annoncePublier = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']);
-        header('Location:'.URL.'/offres_emploi');
-        if($annoncePublier){
-            $_SESSION['alert'] = [
-                "class" => "alert-primary",
-                "message" => "Votre annonce à bien été publié"
-            ];
-        }
-}
 }
 
 public function candidats_postule(){
