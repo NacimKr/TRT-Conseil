@@ -284,7 +284,6 @@ public function offres_emploi(){
     require_once "./views/admin/offre-emploi.php";
     $page_content = ob_get_clean();
     $annonce = $this->publierAnnonce($emplois);
-    $all_emploi = [];
     require_once "./views/common/template.php";
 }
 
@@ -300,29 +299,12 @@ public function candidat(){
 public function create_emploi(){
     ob_start();
     require_once "./views/admin/form-create-emploi-admin.php";
-    $emploi_datas = $this->mainModel->getAllDataFromDB();
     $page_content = ob_get_clean();
     require_once "./views/common/template.php";
-    if(isset($_POST['poste']) && isset($_POST['duration']) && isset($_POST['description'])){
-        //$annoncePublier = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']);
-        $all_emploi = [
-            "poste" => $_POST['poste'],
-            "durée" => $_POST['duration'], 
-            "description" => $_POST['description'], 
-            "salaire" => $_POST['salary'], 
-            "debut" => $_POST['debut'], 
-            "fin" => $_POST['fin']
-        ];
-        
-        return $all_emploi;
-        //header('Location:'.URL.'/offres_emploi');
-        // var_dump($annoncePublier);
-        // if($annoncePublier){
-        //     $_SESSION['alert'] = [
-        //         "class" => "alert-primary",
-        //         "message" => "Votre annonce à bien été publié"
-        //     ];
-        // }
+
+    if(isset($_POST['poste']) && isset($_POST['duration']) && isset($_POST['description'])
+    && isset($_POST['salary']) && isset($_POST['debut']) && isset($_POST['fin'])){
+        $annoncePublier = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']);
     }
 }
 
