@@ -39,7 +39,6 @@ class ModelManager extends MainModel{
     public function getEmploiNameToUtilisateursTable(){
         $req = "SELECT * FROM `utilisateur` u INNER JOIN `emplois` e ON e.emploi_postuler = u.a_postuler";
         $stmt = $this->getBDD()->prepare($req);
-        //$stmt->bindValue(':poste', $poste, PDO::PARAM_STR);
         $stmt->execute();
         $a_postuler = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $a_postuler;
@@ -69,5 +68,4 @@ class ModelManager extends MainModel{
         $a_postuler = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $a_postuler;
     }
-
 }

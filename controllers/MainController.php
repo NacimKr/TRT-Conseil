@@ -68,7 +68,6 @@ public function postuler(){
 
     $this->getUtilisateur->aPostuler($my_emploi[0]['POSTE']);
     $this->mainModel->candidatsAPostuler();
-    //var_dump($this->mainModel->getEmploiNameToUtilisateursTable());
 }
 
 public function login_consultant(){
@@ -106,14 +105,12 @@ public function nouvelle_offre(){
 }
 
 public function create_emploi_recr(){
-    //$emplois_recr = $this->mainModel->getAllDataFromDB();
     ob_start();
     require_once "./views/recruteur/create_emploi_recr.view.php";
     $page_content = ob_get_clean();
     require_once "./views/common/template.php";
     if(isset($_POST['poste']) && isset($_POST['duration']) && isset($_POST['description']) && isset($_POST['debut']) && isset($_POST['fin']) && isset($_POST['salary'])){
         $annoncePublier = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']);
-        header('Location:'.URL."/nouvelle_offre");
         var_dump($annoncePublier);
         if($annoncePublier){
             $_SESSION['alert'] = [
@@ -162,7 +159,6 @@ public function list_candidatures(){
 }
 
 public function validation_form(){
-    
     if(!empty($_POST['name']) && !empty($_POST['password']) && !empty($_POST['role'])){
         $nameSecure = htmlspecialchars($_POST['name']);
         $passwordSecure = htmlspecialchars($_POST['password']);
@@ -296,8 +292,8 @@ public function candidat(){
     ob_start();
     require_once "./views/admin/candidat-admin.php";
     $page_content = ob_get_clean();
-    //$candidats = $this->getUtilisateur->getAllCandidats();
     require_once "./views/common/template.php";
+    var_dump($this->create_emploi());
 }
 
 public function create_emploi(){
@@ -308,13 +304,15 @@ public function create_emploi(){
     require_once "./views/common/template.php";
     if(isset($_POST['poste']) && isset($_POST['duration']) && isset($_POST['description'])){
         $annoncePublier = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']);
-        header('Location:'.URL.'/offres_emploi');
-        if($annoncePublier){
-            $_SESSION['alert'] = [
-                "class" => "alert-primary",
-                "message" => "Votre annonce à bien été publié"
-            ];
-        }
+        return $annoncePublier;
+        //header('Location:'.URL.'/offres_emploi');
+        // var_dump($annoncePublier);
+        // if($annoncePublier){
+        //     $_SESSION['alert'] = [
+        //         "class" => "alert-primary",
+        //         "message" => "Votre annonce à bien été publié"
+        //     ];
+        // }
     }
 }
 
