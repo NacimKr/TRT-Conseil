@@ -283,7 +283,8 @@ public function offres_emploi(){
     $emplois = $this->mainModel->getAllDataFromDB();
     require_once "./views/admin/offre-emploi.php";
     $page_content = ob_get_clean();
-    $this->publierAnnonce($emplois);
+    $annonce = $this->publierAnnonce($emplois);
+    var_dump($annonce);
     require_once "./views/common/template.php";
 }
 
