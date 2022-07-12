@@ -284,7 +284,7 @@ public function offres_emploi(){
     require_once "./views/admin/offre-emploi.php";
     $page_content = ob_get_clean();
     $annonce = $this->publierAnnonce($emplois);
-    var_dump($annonce);
+    $all_emploi = [];
     require_once "./views/common/template.php";
 }
 
@@ -305,7 +305,8 @@ public function create_emploi(){
     require_once "./views/common/template.php";
     if(isset($_POST['poste']) && isset($_POST['duration']) && isset($_POST['description'])){
         $annoncePublier = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']);
-        return $annoncePublier;
+        $all_emploi = [$_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']];
+        return $all_emploi;
         //header('Location:'.URL.'/offres_emploi');
         // var_dump($annoncePublier);
         // if($annoncePublier){
