@@ -45,7 +45,7 @@ class ModelManager extends MainModel{
     }
 
     public function createNewOffresEmploi($poste, $duree, $description, $salaire, $debut, $fin){
-        $req = "INSERT INTO `emplois` (POSTE, Durée, Description, Salaire, heure_debut, heure_fin) VALUES 
+        $req = "INSERT INTO emplois (POSTE, Duree, Description, Salaire, heureDebut, heureFin) VALUES 
         (:poste, :duree, :description, :salaire, :debut, :fin);";
         $stmt = $this->getBDD()->prepare($req);
         $stmt->bindValue(':poste', $poste, PDO::PARAM_STR);
@@ -55,8 +55,7 @@ class ModelManager extends MainModel{
         $stmt->bindValue(':debut', $debut, PDO::PARAM_STR);
         $stmt->bindValue(':fin', $fin, PDO::PARAM_STR);
         $stmt->execute();
-        //$emploi_datas = $stmt->rowCount() > 0;
-        $emploi_datas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $emploi_datas = $stmt->fetchAll();
         $stmt->closeCursor();
         return $emploi_datas;
     }

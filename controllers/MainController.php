@@ -44,7 +44,7 @@ public function vos_offres(){
 public function postuler(){
     echo substr($_GET['page'], 9);
     $get_emploi_by_name = substr($_GET['page'], 9);
-    $get_emploi = $this->mainModel->getMyEmploi($get_emploi_by_name);
+    //$get_emploi = $this->mainModel->getMyEmploi($get_emploi_by_name);
 
     ob_start();
     require_once "./views/postuler-offres.view.php";
@@ -58,7 +58,7 @@ public function postuler(){
         $my_emplois = $emploi;
     }
     
-    $my_emploi = $this->mainModel->getMyEmploi($my_emplois['POSTE']);
+    //$my_emploi = $this->mainModel->getMyEmploi($my_emplois['POSTE']);
     $a_postuler_true = $this->getUtilisateur->aPostuler($my_emploi[0]['POSTE']);
     $emploi_from_click = $this->getUtilisateur->getPosteFromTableFusion(substr($_GET['page'], 9));
 
@@ -67,7 +67,7 @@ public function postuler(){
     echo "<br/>------------";
 
     $this->getUtilisateur->aPostuler($my_emploi[0]['POSTE']);
-    $this->mainModel->candidatsAPostuler();
+    //$this->mainModel->candidatsAPostuler();
 }
 
 public function login_consultant(){
@@ -101,7 +101,6 @@ public function nouvelle_offre(){
     require_once "./views/recruteur/nouvelle_offre.view.php";
     $page_content = ob_get_clean();
     require_once "./views/common/template.php";
-    var_dump($emplois_recr);
 }
 
 public function create_emploi_recr(){
@@ -122,7 +121,7 @@ public function create_emploi_recr(){
 }
 
 public function candidats_postule(){
-    $list_emploi = $this->mainModel->getEmploiPostule();
+    //$list_emploi = $this->mainModel->getEmploiPostule();
     ob_start();
     require_once "./views/consultant/lists_candidats_postule.view.php";
     $page_content = ob_get_clean();
@@ -283,8 +282,9 @@ public function offres_emploi(){
     $emplois = $this->mainModel->getAllDataFromDB();
     require_once "./views/admin/offre-emploi.php";
     $page_content = ob_get_clean();
-    $annonce = $this->publierAnnonce($emplois);
+    //$annonce = $this->publierAnnonce($emplois);
     require_once "./views/common/template.php";
+    //var_dump($annonce);
 }
 
 public function candidat(){
@@ -293,7 +293,6 @@ public function candidat(){
     require_once "./views/admin/candidat-admin.php";
     $page_content = ob_get_clean();
     require_once "./views/common/template.php";
-    var_dump($this->create_emploi());
 }
 
 public function create_emploi(){
@@ -301,20 +300,21 @@ public function create_emploi(){
     require_once "./views/admin/form-create-emploi-admin.php";
     $page_content = ob_get_clean();
     require_once "./views/common/template.php";
-
-    if(isset($_POST['poste']) && isset($_POST['duration']) && isset($_POST['description'])
-    && isset($_POST['salary']) && isset($_POST['debut']) && isset($_POST['fin'])){
-        $annoncePublier = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']);
+    
+    if(!empty($_POST['poste']) && !empty($_POST['duration']) && !empty($_POST['description'])
+    && !empty($_POST['salary']) && !empty($_POST['debut']) && !empty($_POST['fin'])){
+        $annonce = $this->mainModel->createNewOffresEmploi($_POST['poste'], $_POST['duration'], $_POST['description'], $_POST['salary'], $_POST['debut'], $_POST['fin']);
     }
+
 }
 
-public function publierAnnonce($emploi){
-    return $emploi;
-}
+// public function publierAnnonce($emploi){
+//     return $emploi;
+// }
 
-public function publierLesCandidats($candidats){
-    return $candidats;
-}
+// public function publierLesCandidats($candidats){
+//     return $candidats;
+// }
 /////////////////
 public function create_consultant(){
     ob_start();
